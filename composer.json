@@ -3,7 +3,8 @@
     "description": "Wrapper for the Amazon Product Advertising API",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.2",
+        "ext-json": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"
