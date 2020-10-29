@@ -11,6 +11,10 @@ class BasicProductSearchTest extends AbstractTest
      */
     public function basicSearch()
     {
+        $this->createClient();
 
+        $result = $this->apiClient->search();
+
+        $this->assertNotNull($result);
     }
 }

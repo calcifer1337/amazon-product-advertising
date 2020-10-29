@@ -10,10 +10,22 @@ use Calcifer1337\AmazonProductAdvertising\Client;
 abstract class AbstractTest extends TestCase {
     use TestTrait;
 
+    /**
+     * @var Client
+     */
     protected $apiClient;
 
-    public function createAPIClient()
+    public function createClient()
     {
-        $this->apiClient = new Client();
+        if(null !== $this->apiClient)
+        {
+            return;
+        }
+
+        $this->apiClient = new Client(
+            self::getAmazonAssocTag(),
+            self::getAmazonAssocAccessKey(),
+            self::getAmazonAssocSecretKey()
+        );
     }
 }
